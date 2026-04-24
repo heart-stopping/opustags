@@ -201,6 +201,7 @@ static ot::byte_string_view detect_mime_type(ot::byte_string_view data)
 {
 	static std::initializer_list<std::pair<ot::byte_string_view, ot::byte_string_view>> magic_numbers = {
 		{ "\xff\xd8\xff"sv, "image/jpeg"sv },
+		{ "\x00\x00\x00\x0cJXL \x0d\x0a\x87\x0a"sv, "image/jxl"sv },
 		{ "\x89PNG"sv, "image/png"sv },
 		{ "GIF8"sv, "image/gif"sv },
 	};
